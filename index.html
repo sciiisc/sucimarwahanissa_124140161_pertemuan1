@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOKO KOPI OMA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🛒 TOKO KOPI OMA</h1>
+    <p>Isi tenaga, Lanjut skripsian!</p>
+  </header>
+
+  <main class="container">
+    <!-- FORM INPUT MENU -->
+    <section class="card">
+      <h2>Tambah Menu</h2>
+      <form id="form-barang" novalidate>
+        <div class="form-group">
+          <label for="nama-barang">Nama Menu</label>
+          <input type="text" id="nama-barang" placeholder="Contoh: Matcha Classic">
+          <small class="error" id="err-nama"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="harga-barang">Harga Satuan (Rp)</label>
+          <input type="number" id="harga-barang" placeholder="Minimal 500,-">
+          <small class="error" id="err-harga"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="qty-barang">Jumlah / Qty</label>
+          <input type="number" id="qty-barang" placeholder="Minimal 1">
+          <small class="error" id="err-qty"></small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Tambah ke Keranjang</button>
+      </form>
+    </section>
+
+    <!-- TABEL KERANJANG -->
+    <section class="card">
+      <h2>Keranjang Belanja</h2>
+      <div class="table-wrapper">
+        <table id="tabel-keranjang">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama Menu</th>
+              <th>Harga Satuan</th>
+              <th>Qty</th>
+              <th>Subtotal</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-keranjang"></tbody>
+        </table>
+      </div>
+      <p id="empty-msg" class="empty-msg">Keranjang masih kosong.</p>
+    </section>
+
+    <!-- RINGKASAN & PEMBAYARAN -->
+    <section class="card">
+      <h2>Ringkasan Pembayaran</h2>
+
+      <div class="row">
+        <span>Total Belanja:</span>
+        <strong id="total-belanja">Rp 0</strong>
+      </div>
+
+      <div class="form-group">
+        <label for="kode-promo">Kode Promo (opsional: HEMAT10)</label>
+        <input type="text" id="kode-promo" placeholder="Masukkan kode promo">
+      </div>
+
+      <div class="row">
+        <span>Diskon:</span>
+        <strong id="diskon">Rp 0</strong>
+      </div>
+
+      <div class="row total-akhir">
+        <span>Total Akhir:</span>
+        <strong id="total-akhir">Rp 0</strong>
+      </div>
+
+      <div class="form-group">
+        <label for="uang-bayar">Uang Bayar (Rp)</label>
+        <input type="number" id="uang-bayar" placeholder="Masukkan nominal uang">
+      </div>
+
+      <div class="row">
+        <span>Kembalian:</span>
+        <strong id="kembalian">Rp 0</strong>
+      </div>
+      <p id="pesan-bayar" class="info"></p>
+
+      <button id="btn-reset" class="btn btn-danger">Transaksi Baru / Reset</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Praktikum Pemrograman Web</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
